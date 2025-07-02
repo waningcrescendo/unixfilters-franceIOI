@@ -2,15 +2,15 @@
 
 ## Présentation
 
-Ce projet a été réalisé pendant mon stage de troisième année de licence d'Informatique à l'Université de Lille.
-Sujet :
-Objectif :
-Il est composé de deux parties principales :
-
-- le front en JavaScript qui utilise la libriarie Blockly de Google : [/public](public)
-- le back qui permet l'exécution des commandes Bash en Python en utilisant le module subprocess : [/python_lib](python_lib)
+Ce projet a été réalisé pendant mon stage de troisième année de licence d'Informatique à l'Université de Lille.\
+**Objectif**: Créer une interface web pédagogique qui permet à l’utilisateur de s’initier aux filtres Unix en utilisant la programmation par blocs (avec Blockly)
 
 ## Architecture globale
+
+Le projet est composé de deux grandes parties :
+
+- Frontend : interface web en JavaScript qui utilise la libriarie Blockly de Google : [/public](public)
+- Backend : librairie Python qui permet l'exécution des commandes Bash avec le module subprocess : [/python_lib](python_lib)
 
 ### Interface Blockly/JavaScript
 
@@ -37,6 +37,13 @@ Il est composé de deux parties principales :
 - [Ajouter une commande](./docs/lib_py/add_command.md)
 
 ## Format d'échange des données
+
+Le schéma ci-dessous montre le fonctionnement global du système :
+
+1. L'utilisateur construit une commande via l'interface Blockly
+2. Le code généré est envoyé au serveur Python via une requête HTTP
+3. Le serveur exécute la commande en utilisant la librairie Python et retourne l'objet JSON en sortie
+4. L'interface affiche le résultat à l'utilisateur
 
 ![Schéma échange des données](./docs/img/nouvelle_version.png)
 
