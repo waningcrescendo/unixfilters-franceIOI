@@ -14,7 +14,7 @@ Le projet est composé de deux grandes parties :
 
 ### Interface Blockly/JavaScript
 
-.\
+.public/\
 ├── blocklyUnixFilters_lib.js --> librairie contenant la définition des blocs\
 ├── index.css --> style de la page html\
 ├── index.html --> contenu de la tâche\
@@ -28,7 +28,7 @@ Le projet est composé de deux grandes parties :
 
 ### Librairie Python
 
-.\
+.python_lib/\
 ├── commands.py --> librairie définissant les différents filtres et exécutant la commande\
 └── server.py --> reçoit le code généré par les blocs et utilise la librairie pour récupérer le résultat et le renvoyer au front
 
