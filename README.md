@@ -8,7 +8,7 @@ Il est composé de deux parties principales :
 - le front en JavaScript qui utilise la libriarie Blockly de Google : [/public](public)
 - le back qui permet l'exécution des commandes Bash en Python en utilisant le module subprocess : [/python_lib](python_lib)
 
-![Schéma échange des données](/unixfilters/docs/img/nouvelle_version.png)
+![Schéma échange des données](./docs/img/nouvelle_version.png)
 
 ## Getting started
 
