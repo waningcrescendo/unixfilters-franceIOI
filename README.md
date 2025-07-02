@@ -1,9 +1,14 @@
 # Unix Filters
 
-Ce projet a été réalisé pendant mon stage de troisième année de licence d'Informatique à l'Université de Lille. Il est composé de deux parties principales :
+Ce projet a été réalisé pendant mon stage de troisième année de licence d'Informatique à l'Université de Lille.
+Sujet :
+Objectif :
+Il est composé de deux parties principales :
 
 - le front en JavaScript qui utilise la libriarie Blockly de Google : [/public](public)
 - le back qui permet l'exécution des commandes Bash en Python en utilisant le module subprocess : [/python_lib](python_lib)
+
+![](/unixfilters/docs/img/nouvelle_version.png)
 
 ## Getting started
 
