@@ -1,5 +1,7 @@
 # Unix Filters
 
+## Présentation
+
 Ce projet a été réalisé pendant mon stage de troisième année de licence d'Informatique à l'Université de Lille.
 Sujet :
 Objectif :
@@ -8,9 +10,37 @@ Il est composé de deux parties principales :
 - le front en JavaScript qui utilise la libriarie Blockly de Google : [/public](public)
 - le back qui permet l'exécution des commandes Bash en Python en utilisant le module subprocess : [/python_lib](python_lib)
 
+## Architecture globale
+
+### Interface Blockly/JavaScript
+
+.\
+├── blocklyUnixFilters_lib.js --> librairie contenant la définition des blocs\
+├── index.css --> style de la page html\
+├── index.html --> contenu de la tâche\
+├── jsongenerator.js --> génération du code pour chaque bloc\
+├── task.js --> contient les paramètres de la tâche (blocs disponibles, nombre de blocs autorisés,...)\
+└── unixfilters.js --> logique de l'affichage et de l'envoi de la commande au serveur
+
+#### Aide
+
+- [Ajouter un bloc](./docs/lib_js/add_block.md)
+
+### Librairie Python
+
+.\
+├── commands.py --> librairie définissant les différents filtres et exécutant la commande\
+└── server.py --> reçoit le code généré par les blocs et utilise la librairie pour récupérer le résultat et le renvoyer au front
+
+#### Aide
+
+- [Ajouter une commande](./docs/lib_py/add_command.md)
+
+## Format d'échange des données
+
 ![Schéma échange des données](./docs/img/nouvelle_version.png)
 
-## Getting started
+### Getting started
 
 Cloner le repo
 
@@ -18,7 +48,7 @@ Cloner le repo
 git clone https://github.com/waningcrescendo/unixfilters-franceIOI.git
 ```
 
-### Mode développement
+#### Mode développement
 
 Ajouter le repo bebras-modules dans le dossier public
 
@@ -71,7 +101,7 @@ node server.js
 
 URL en développement : http://localhost:3000
 
-#### Tester une tâche localement
+##### Tester une tâche localement
 
 1. Générer un code Blockly depuis l'interface
 
@@ -92,32 +122,6 @@ python3 tests/gen/commands.py < tests/files/test01.in > tests/files/test01.solou
 python3 tests/gen/checker.py tests/files/test01.solout tests/files/test01.in tests/files/test01.out
 ```
 
-### Production
+#### Production
 
 Envoyer les fichiers sur le SVN (on verra plus tard)
-
-## Interface Blockly/JavaScript
-
-.\
-├── blocklyUnixFilters_lib.js --> librairie contenant la définition des blocs\
-├── index.css --> style de la page html\
-├── index.html --> contenu de la tâche\
-├── jsongenerator.js --> génération du code pour chaque bloc\
-├── task.js --> contient les paramètres de la tâche (blocs disponibles, nombre de blocs autorisés,...)\
-└── unixfilters.js --> logique de l'affichage et de l'envoi de la commande au serveur
-
-### Aide
-
-- [Ajouter un bloc](./docs/lib_js/add_block.md)
-
-## Librairie Python
-
-.\
-├── commands.py --> librairie définissant les différents filtres et exécutant la commande\
-└── server.py --> reçoit le code généré par les blocs et utilise la librairie pour récupérer le résultat et le renvoyer au front
-
-PAS PAREIL QUAND LE BLOC EST UNE COMMANDE OU UN SYMBOLE
-
-### Aide
-
-- [Ajouter une commande](./docs/lib_py/add_command.md)
